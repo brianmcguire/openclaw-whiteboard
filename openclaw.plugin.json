@@ -1,0 +1,23 @@
+{
+  "id": "whiteboard",
+  "name": "Shared Whiteboard",
+  "description": "A collaborative drawing board for OpenClaw session dashboards.",
+  "version": "0.1.2",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "controlUi": {
+    "entry": "dist/control-ui/5e151a90f33f042e6bf032ccd681b2b676b42c42ec272d79377937e61d884d5e/index.js",
+    "styles": [
+      "dist/control-ui/5e151a90f33f042e6bf032ccd681b2b676b42c42ec272d79377937e61d884d5e/index.css"
+    ]
+  },
+  "contracts": {
+    "tools": []
+  }
+}

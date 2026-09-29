@@ -1,0 +1,56 @@
+{
+  "name": "@brianmcguire/openclaw-whiteboard",
+  "version": "0.1.2",
+  "description": "A collaborative whiteboard for OpenClaw session dashboards.",
+  "type": "module",
+  "author": "Brian McGuire",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianmcguire/openclaw-whiteboard.git"
+  },
+  "homepage": "https://github.com/brianmcguire/openclaw-whiteboard#readme",
+  "bugs": {
+    "url": "https://github.com/brianmcguire/openclaw-whiteboard/issues"
+  },
+  "keywords": [
+    "openclaw",
+    "whiteboard",
+    "collaboration",
+    "dashboard"
+  ],
+  "scripts": {
+    "prebuild": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "tsc -p tsconfig.json && openclaw plugins build",
+    "validate": "openclaw plugins validate --json",
+    "pack": "openclaw plugins pack --json"
+  },
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.9.5"
+  },
+  "dependencies": {
+    "typebox": "1.3.30"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "esbuild": "0.28.2",
+    "openclaw": "2026.9.5",
+    "typescript": "^5.9.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "controlUi": "./src/control-ui.ts",
+    "compat": {
+      "pluginApi": ">=2026.9.5"
+    },
+    "build": {
+      "openclawVersion": "2026.9.5"
+    }
+  }
+}

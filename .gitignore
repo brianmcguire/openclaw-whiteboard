@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+*.tgz
+*.log
+.env
+.env.*
+!.env.example
+coverage/
+INTEGRATION-STATUS.md
+reports/
