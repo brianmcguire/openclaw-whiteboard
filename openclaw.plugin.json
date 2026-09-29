@@ -2,7 +2,10 @@
   "id": "whiteboard",
   "name": "Shared Whiteboard",
   "description": "A collaborative drawing board for OpenClaw session dashboards.",
-  "version": "0.1.2",
+  "version": "0.1.3",
+  "categories": [
+    "productivity"
+  ],
   "configSchema": {
     "type": "object",
     "additionalProperties": false,
