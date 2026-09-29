@@ -4,6 +4,7 @@
   "description": "A collaborative whiteboard for OpenClaw session dashboards.",
   "type": "module",
   "author": "Brian McGuire",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brianmcguire/openclaw-whiteboard.git"
@@ -27,7 +28,8 @@
   "files": [
     "dist",
     "openclaw.plugin.json",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "peerDependencies": {
     "openclaw": ">=2026.9.5"

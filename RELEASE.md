@@ -1,6 +1,6 @@
 # Shared Whiteboard release record
 
-This repository packages the independent `whiteboard` feature plugin for OpenClaw. Its runtime widget kind is `whiteboard:board`; its proposed ClawHub package name is `@brianmcguire/openclaw-whiteboard`. The public GitHub repository and ClawHub release have not yet been created.
+This repository packages the independent `whiteboard` feature plugin for OpenClaw. Its runtime widget kind is `whiteboard:board`; its ClawHub package name is `@brianmcguire/openclaw-whiteboard`. Check the GitHub repository and ClawHub listing for current publication status.
 
 ## Verified through September 29, 2026
 
@@ -12,14 +12,18 @@ This repository packages the independent `whiteboard` feature plugin for OpenCla
 - Version 0.1.2 is installed alongside Delivery Lens on the Nexus Mac mini's isolated Gateway. Its widget is pinned in the existing shared Delivery Lens session. A saved test mark survived browser reload, a 1200 × 700 PNG exported, and the temporary mark was cleared. This did not include a fresh two-person live sign-in test.
 - The package and source review found no credentials or Gateway state in the archive. The local integration status file and generated reports are excluded from Git.
 
-## Open release decisions and checks
+## Shared-editing beta release checks
 
-1. Select the source license and add it to the repository and archive. Remove `private: true` from `package.json` for the public candidate.
-2. Decide whether the first release may be a shared-editing beta. In OpenClaw 2026.9.5, switching a session to Read-only blocks a collaborator's write as intended, but also rejects this widget's snapshot request after reload. A read-only viewer therefore cannot see the saved board. If read-only viewing is required for the initial public release, fix and retest that path first.
-3. Run a fresh real-account acceptance test with two separately signed-in OpenClaw people, including one browser and one macOS app if available. Confirm each sees the other's stroke, a reconnect preserves the board, and session access blocks an uninvited account. The earlier synthetic test proves the collaboration mechanism, not the real sign-in path.
-4. Verify an exported PNG can be attached to an email. Test the native image share sheet on a supported non-Mac platform if that claim remains in the public README.
-5. Create the public GitHub repository, push the reviewed source commit, and record its exact SHA. Run `clawhub package validate .` and `clawhub package publish . --family code-plugin --dry-run` against that commit. Inspect resolved owner, scope, package files, compatibility, and source metadata.
-6. Publish the tested package with `--wait`. Confirm the release reaches public status after ClawHub security checks, then install it from ClawHub into a fresh isolated OpenClaw state and verify the widget loads. A staged package or pending scan is not a public release.
+The first public version is authorized as a shared-editing beta. In OpenClaw 2026.9.5, switching a session to Read-only blocks a collaborator's write as intended, but also rejects this widget's snapshot request after reload. A read-only viewer therefore cannot see the saved board. The README discloses this limitation.
+
+1. Push the MIT-licensed candidate to GitHub and record its exact SHA. Run `clawhub package validate .` and `clawhub package publish . --family code-plugin --dry-run` against that commit. Inspect resolved owner, scope, package files, compatibility, and source metadata.
+2. Publish the tested package with `--wait`. Confirm the release reaches public status after ClawHub security checks, then install it from ClawHub into a fresh isolated OpenClaw state and verify the widget loads. A staged package or pending scan is not a public release.
+
+## Beta follow-up
+
+- Run a fresh real-account acceptance test with two separately signed-in OpenClaw people, including one browser and one macOS app if available. Confirm each sees the other's stroke, a reconnect preserves the board, and session access blocks an uninvited account. The earlier synthetic test proves the collaboration mechanism, not the real sign-in path.
+- Implement and test a supported read-only snapshot path.
+- Verify an exported PNG can be attached to an email. Test the native image share sheet on a supported non-Mac platform.
 
 ## Product limits
 

@@ -1,10 +1,12 @@
 # Shared Whiteboard for OpenClaw
 
-An experimental session dashboard widget for collaborative freehand drawing in OpenClaw. It works in the browser Control UI and the macOS app's embedded dashboard when both use the same Gateway.
+An experimental shared-editing beta for collaborative freehand drawing in OpenClaw session dashboards. It works in the browser Control UI and the macOS app's embedded dashboard when both use the same Gateway.
+
+The plugin source is licensed under [MIT](LICENSE). This license applies to the plugin code and documentation; it does not license drawings created on a board.
 
 ## Install and add a board
 
-After the ClawHub release is public, install the plugin on your Gateway:
+Install the public ClawHub package on your Gateway:
 
 ```sh
 openclaw plugins install clawhub:@brianmcguire/openclaw-whiteboard
@@ -27,7 +29,7 @@ The widget stays with that session. Other sessions need their own board widget. 
 - Pen colors and widths, whole-stroke erasing, undo of strokes drawn **in this window**, and a revision-checked clear action.
 - Export a 1200 × 700 PNG and copy the current session link for OpenClaw teammates. On macOS, **Download to share** saves a PNG for Mail, Messages, or another app. On other platforms, **Share image** uses the system share sheet when file sharing is supported and otherwise downloads the PNG.
 
-An isolated Gateway test used two separate synthetic OpenClaw identities. Both drew in the same shared session and saw each other's saved strokes without refreshing; the board survived a collaborator reload. These identities are test headers, not two real people signing in. The test also confirmed that OpenClaw rejects a collaborator's write when the session becomes read-only. In OpenClaw 2026.9.5, that mode also rejects the widget's snapshot request after reload, so read-only board viewing remains a release blocker. Version 0.1.1 rendered in the OpenClaw macOS app against a Mac Mini Gateway over HTTPS; a drawn mark was saved and survived reopening the session. PNG export produced a 1200 × 700 image, and the session link was copied. The macOS file share sheet hung the app in 0.1.0, so later builds use the download path there.
+An isolated Gateway test used two separate synthetic OpenClaw identities. Both drew in the same shared session and saw each other's saved strokes without refreshing; the board survived a collaborator reload. These identities are test headers, not two real people signing in. The test also confirmed that OpenClaw rejects a collaborator's write when the session becomes read-only. **Beta limit:** in OpenClaw 2026.9.5, that mode also rejects the widget's snapshot request after reload, so read-only viewers cannot load the saved board. Use a Shared session for live collaboration. Version 0.1.2 rendered in the OpenClaw browser Control UI against a Mac Mini Gateway over HTTPS; a drawn mark was saved and survived reopening the session. PNG export produced a 1200 × 700 image, and the session link was copied. Version 0.1.1 was also exercised in the macOS app. The macOS file share sheet hung the app in 0.1.0, so later builds use the download path there.
 
 ## Sharing
 
@@ -51,11 +53,11 @@ The backend writes one JSON board per agent/session under the OpenClaw state dir
 
 OpenClaw 2026.9.5 does not provide a stable person identity to this feature action handler. Therefore **Undo mine** is limited to strokes remembered by the current browser window, and erasing a stroke is available to any participant permitted to edit the session. Per-person ownership and cross-device undo are not implemented.
 
-## Next acceptance checks
+## Beta follow-up checks
 
-1. Two real, separately signed-in OpenClaw people draw in one shared session; both see the same result after reconnect and restart. Resolve read-only snapshot access so a viewer can see the board without editing it.
-2. Open the same session board in a separately authenticated browser Control UI against the Mac Mini Gateway.
+1. Two real, separately signed-in OpenClaw people draw in one shared session; both see the same result after reconnect and restart. Test a separately authenticated browser and the macOS app against the same Gateway.
+2. Add a supported read-only data path so viewers can reload and see the board without edit permission.
 3. Check **Share image** on a supported non-Mac platform and the PNG email-attachment path.
-4. Finish the public GitHub and ClawHub checks in [RELEASE.md](RELEASE.md).
+4. Track the public GitHub and ClawHub release evidence in [RELEASE.md](RELEASE.md).
 
 OpenClaw references: [feature plugins](https://docs.openclaw.ai/plugins/feature-plugins), [session sharing](https://docs.openclaw.ai/web/control-ui/sessions-and-sidebar), and [multi-user mode](https://docs.openclaw.ai/concepts/multi-user).
