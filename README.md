@@ -4,6 +4,16 @@ An experimental shared-editing beta for collaborative freehand drawing in OpenCl
 
 The plugin source is licensed under [MIT](LICENSE). This license applies to the plugin code and documentation; it does not license drawings created on a board.
 
+## Screenshots
+
+The whiteboard in the OpenClaw macOS dashboard, with a sample drawing in a Shared session:
+
+![Shared Whiteboard widget showing the drawing canvas, pen controls, saved status, and sharing buttons](https://raw.githubusercontent.com/brianmcguire/openclaw-whiteboard/v0.1.4/media/screenshots/whiteboard-desktop.jpg)
+
+The same sample drawing in the image export preview. An exported image is a static snapshot; collaborators use OpenClaw session sharing for an editable board.
+
+![Preview of a whiteboard image export with a simple sample drawing](https://raw.githubusercontent.com/brianmcguire/openclaw-whiteboard/v0.1.4/media/screenshots/whiteboard-export-preview.jpg)
+
 ## Install and add a board
 
 Install the public ClawHub package on your Gateway:

@@ -1,6 +1,6 @@
 {
   "name": "@brianmcguire/openclaw-whiteboard",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A collaborative whiteboard for OpenClaw session dashboards.",
   "type": "module",
   "author": "Brian McGuire",
@@ -29,6 +29,7 @@
     "dist",
     "openclaw.plugin.json",
     "README.md",
+    "media/screenshots",
     "LICENSE"
   ],
   "peerDependencies": {

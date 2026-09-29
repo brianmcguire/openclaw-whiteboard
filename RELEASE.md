@@ -2,6 +2,10 @@
 
 This repository packages the independent `whiteboard` feature plugin for OpenClaw. Its runtime widget kind is `whiteboard:board`; its ClawHub package name is `@brianmcguire/openclaw-whiteboard`. Check the GitHub repository and ClawHub listing for current publication status.
 
+## Screenshot release 0.1.4
+
+Version 0.1.4 adds two public screenshots to the README and package: the widget in the OpenClaw macOS dashboard and the image export preview of the same sample drawing. The captures were taken from a Shared session on the Nexus Mac mini Gateway. They contain no chat messages or private board content; the temporary demo strokes were cleared after capture. The export preview screenshot shows the image onscreen, not a separately verified downloaded file. This release changes documentation and package metadata only; whiteboard runtime code is unchanged.
+
 ## Verified through September 29, 2026
 
 - Version 0.1.2 built and passed OpenClaw 2026.9.5 plugin validation in an isolated Node 24 environment.
